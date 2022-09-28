@@ -5,14 +5,15 @@ let zoff = 0;
 let circumference;
 let desiredLength;
 
+const radDivisions = 40;
 const stringWeight = 2;
 const stringGap = 8;
 
 let phase = 0;
 let wobble = 0;
-const wobbleInc = 0.038;
-const phaseInc = 0.0001;
-const zoffInc = 0.001;
+const wobbleInc = 0.028;
+const phaseInc = 0.00001;
+const zoffInc = 0.0006;
 const circleNumber = 55;
 
 // let
@@ -88,7 +89,7 @@ const makeCircle = (width, height, wobble, close = false) => {
   for (
     let a = phase;
     a < Math.PI * 2 + phase - Math.radians(gap);
-    a += Math.radians(30)
+    a += Math.radians(radDivisions)
   ) {
     let xoff = mapRange(Math.cos(a + phase), -1, 1, 0, noiseMax);
     let yoff = mapRange(Math.sin(a + phase), -1, 1, 0, noiseMax);
