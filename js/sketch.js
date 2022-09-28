@@ -9,11 +9,11 @@ const stringWeight = 2;
 const stringGap = 8;
 
 let phase = 0;
-let wobble = 3;
-const wobbleInc = 0.028;
+let wobble = 0;
+const wobbleInc = 0.038;
 const phaseInc = 0.0001;
 const zoffInc = 0.001;
-const circleNumber = 100;
+const circleNumber = 55;
 
 // let
 //  taken from paper.js docs http://paperjs.org/tutorials/getting-started/using-javascript-directly/
@@ -51,14 +51,16 @@ window.onload = function () {
 
   makeCircle(width, height, wobble, true);
   view.onFrame = function (event) {
-    paper.project.activeLayer.removeChildren();
-    wobble = 0;
-    for (let x = 0; x < circleNumber; x++) {
-      makeCircle(width, height, wobble, true);
-      wobble += wobbleInc;
+    if (event.count % 2 === 0) {
+      paper.project.activeLayer.removeChildren();
+      wobble = 0;
+      for (let x = 0; x < circleNumber; x++) {
+        makeCircle(width, height, wobble, true);
+        wobble += wobbleInc;
+      }
+      phase += phaseInc;
+      zoff += zoffInc;
     }
-    phase += phaseInc;
-    zoff += zoffInc;
   };
   // if not doing animation then use this to draw
   //view.draw();
