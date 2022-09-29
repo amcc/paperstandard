@@ -5,16 +5,16 @@ let zoff = 0;
 let circumference;
 let desiredLength;
 
-const radDivisions = 2;
+const radDivisions = 30;
 const stringWeight = 2;
 const stringGap = 8;
 
 let phase = 0;
 let wobble = 0;
-const wobbleInc = 0.018;
-const phaseInc = 0.00001;
+const wobbleInc = 0.014;
+const phaseInc = 0.0001;
 const zoffInc = 0.0003;
-const circleNumber = 200;
+const circleNumber = 100;
 
 // let
 //  taken from paper.js docs http://paperjs.org/tutorials/getting-started/using-javascript-directly/
@@ -27,7 +27,7 @@ window.onload = function () {
   let width = paper.view.size.width;
   let height = paper.view.size.height;
 
-  desiredLength = Math.min(width, height) * 2.4;
+  desiredLength = Math.min(width, height) * 2.2;
   console.log(desiredLength);
 
   console.log("noise", noise3D(0.01, 0.02, 0.003));
@@ -120,7 +120,7 @@ const makeCircle = (width, height, wobble, close = false) => {
   );
 
   myPath.closed = true;
-  // myPath.smooth();
+  myPath.smooth();
   // myPath.fullySelected = true;
   myPath.scale(desiredLength / circumference);
   // close ? p5.endShape(p5.CLOSE) : p5.endShape();
