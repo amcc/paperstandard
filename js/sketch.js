@@ -5,16 +5,16 @@ let zoff = 0;
 let circumference;
 let desiredLength;
 
-const radDivisions = 14;
+const radDivisions = 30;
 const stringWeight = 2;
 const stringGap = 8;
 
 let phase = 0;
 let wobble = 0;
-const wobbleInc = 0.017;
+const wobbleInc = 0.014;
 const phaseInc = 0.0001;
-const zoffInc = 0.0006;
-const circleNumber = 200;
+const zoffInc = 0.0003;
+const circleNumber = 100;
 
 // let
 //  taken from paper.js docs http://paperjs.org/tutorials/getting-started/using-javascript-directly/
