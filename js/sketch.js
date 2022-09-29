@@ -5,16 +5,16 @@ let zoff = 0;
 let circumference;
 let desiredLength;
 
-const radDivisions = 40;
+const radDivisions = 2;
 const stringWeight = 2;
 const stringGap = 8;
 
 let phase = 0;
 let wobble = 0;
-const wobbleInc = 0.028;
+const wobbleInc = 0.018;
 const phaseInc = 0.00001;
-const zoffInc = 0.0006;
-const circleNumber = 55;
+const zoffInc = 0.0003;
+const circleNumber = 200;
 
 // let
 //  taken from paper.js docs http://paperjs.org/tutorials/getting-started/using-javascript-directly/
@@ -120,7 +120,7 @@ const makeCircle = (width, height, wobble, close = false) => {
   );
 
   myPath.closed = true;
-  myPath.smooth();
+  // myPath.smooth();
   // myPath.fullySelected = true;
   myPath.scale(desiredLength / circumference);
   // close ? p5.endShape(p5.CLOSE) : p5.endShape();
