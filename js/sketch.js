@@ -28,9 +28,6 @@ window.onload = function () {
   let height = paper.view.size.height;
 
   desiredLength = Math.min(width, height) * 2.2;
-  console.log(desiredLength);
-
-  console.log("noise", noise3D(0.01, 0.02, 0.003));
 
   //your paper initial conditions here
 
@@ -109,7 +106,6 @@ const makeCircle = (width, height, wobble, close = false) => {
     prevX = x;
     prevY = y;
   }
-  console.log(shapeArray);
   var myPath = new paper.Path();
   myPath.strokeColor = "black";
 
